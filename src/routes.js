@@ -3,11 +3,7 @@ import {createStackNavigator, createDrawerNavigator, createAppContainer} from 'r
 import Home from './pages/Home';
 import Books from './pages/Books';
 import Detail from './pages/Detail';
-import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as generalActions from './store/actions/general';
 
 const defaultOptions = {
     initialRouteName: 'Home',
@@ -52,8 +48,10 @@ const stackNavigator = createStackNavigator({
 defaultOptions
 );
 
-const mapDispatchToProps = dispatch => bindActionCreators(generalActions, dispatch);
+//const mapDispatchToProps = dispatch => bindActionCreators(generalActions, dispatch);
 
-export default connect(null, mapDispatchToProps)(createAppContainer(stackNavigator))
+export default createAppContainer(stackNavigator);
+
+//connect(null, mapDispatchToProps)(createAppContainer(stackNavigator))
 
 //export default 
